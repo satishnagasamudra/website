@@ -3,22 +3,22 @@ pipeline {
         label 'master'
     }
     stages {
-        stage('Build') {
+        stage('Git-Job') {
             steps {
-                build 'Test'
+                build 'Git-Job'
             }
         }
-        stage('Test') {
+        stage('Git-job-prod') {
             steps {
-                build 'Testurl'
+                build 'Git-job-prod'
             }
         }
-        stage('Prod') {
+        stage('Git-job-prod') {
             when {
                 branch 'master' 
             }
             steps {
-                build 'Prod'
+                build 'Git-job-prod'
             }
         }
     }
